@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SM-liiga dataportal</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css" />
+    <script src="src/index.js"></script>
+    <script src="https://unpkg.com/frappe-charts@latest"></script>
+    <script
+      src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
+      integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s="
+      crossorigin=""
+    ></script>
+  </head>
+
+  <body>
+    <div class="all">
+      <h1>SM-liiga dataportal</h1>
+      <p>
+        Welcome to the data portal of Finland's national ice hockey league 'Liiga.' In this data portal, you will find various real-time data about the teams in League.
+      </p>
+      <div class="column">
+        <h4 id="chart-title">Table for different kind of statistic</h4>
+        <div id="chart"></div>
+        <div class="columnShrink">
+          <button id=img>Download chart</button>
+        </div>
+        <button id="reloadButton">Show the point table</button>
+      </div>
+
+    <div class="section">
+        <form id="search">
+            <label for="searchcity">Search team by city:</label>
+            <input type="text" placeholder="City" id="searchcity"></input>
+            <input type="submit" value="Search"></input>
+          </form>
+    </div>
+
+    <div class="column">
+        <h4 id="chart-title">Cities and teams on map</h4>
+        <div id="map"></div>
+        <label for="dropdown">Data to show on map:</label>
+        <select id="dropdown">
+          <option value="TeamsOnMap">Teams on the map</option>
+          <option value="AverageAttentands">Average home attentands</option>
+        </select>
+    </div>
+
+  </div>
+  </body>
+</html>
